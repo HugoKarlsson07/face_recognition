@@ -8,7 +8,7 @@ import pygame
 pygame.mixer.init()
 
 # Ladda musikfilen
-music_path = r"C:\Users\hugoo\face_reconistion\face\music\song.mp3"
+music_path = r"C:\Users\hugo.karlsson7\Documents\Face\face_recognition\face\music\song.mp3"
 if os.path.exists(music_path):
     pygame.mixer.music.load(music_path)
 else:
@@ -19,7 +19,7 @@ else:
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
 # Ladda referensbilder
-reference_folder = r"C:\Users\hugoo\face_reconistion\face\train_faces"
+reference_folder = r"C:\Users\hugo.karlsson7\Documents\Face\face_recognition\face\trump"
 reference_images = []
 
 for filename in os.listdir(reference_folder):
