@@ -64,7 +64,7 @@ def check_face(frame):
         with lock:
             face_match = False
             if music_playing:
-                pygame.mixer.music.stop()
+                pygame.mixer.music.pause()
                 music_playing = False
                 
     except Exception as e:
@@ -72,7 +72,7 @@ def check_face(frame):
         with lock:
             face_match = False
             if music_playing:
-                pygame.mixer.music.stop()
+                pygame.mixer.music.pause()
                 music_playing = False
 
 while True:
@@ -92,7 +92,7 @@ while True:
     # Om inga ansikten detekteras, stoppa musiken
     if len(faces) == 0 and music_playing:
         with lock:
-            pygame.mixer.music.stop()
+            pygame.mixer.music.pause()
             music_playing = False
 
     # Rita en ruta runt ansiktet
@@ -107,7 +107,7 @@ while True:
         else:
             box_color = (0, 255, 0)  # 🟢 Ingen match
 
-        cv2.rectangle(frame, (x, y), (x + w, y + h), box_color, 3)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), box_color, 4)
 
     cv2.imshow("Video", frame)
 
