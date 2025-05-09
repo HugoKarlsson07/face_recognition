@@ -1,6 +1,9 @@
 Face Recognition Music Player
 This Python program recognizes faces by comparing them to reference images and plays music upon finding a match.​
 
+youtube video
+https://youtube.com/shorts/TFIN1iEr2Tc?feature=shared
+
 Features
 Face Recognition: Compares detected faces to a set of reference images.​
 
