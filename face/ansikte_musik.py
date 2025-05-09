@@ -1,3 +1,11 @@
+#Name: face/ansikte_musik.py
+#Author: Hugo Karlsson
+#Date: 2025-04-11
+#Description: This script uses OpenCV and DeepFace to detect faces in a video stream and play music when a specific face is recognized.
+# It uses threading to handle face recognition without blocking the main video stream. The script also includes error handling for file loading and camera access.
+#Dependencies: OpenCV, DeepFace, pygame, threading
+#Usage: Run the script and ensure the camera is connected. The script will play music when a recognized face is detected and pause it when no face is detected.
+
 import cv2
 import os
 import threading
@@ -46,6 +54,12 @@ counter = 0
 face_match = None  # None = Ingen detektion, False = Ingen match, True = Match
 lock = threading.Lock()
 music_playing = False  # Flagga för att undvika upprepade spelningar
+
+
+# funktion för att ta en fram och kontrollera ansiktsigenkänning
+#has no return value, it just sets the global variable face_match
+#Author: Hugo Karlsson
+#Date: 2025-04-11
 
 def check_face(frame):
     global face_match, music_playing
